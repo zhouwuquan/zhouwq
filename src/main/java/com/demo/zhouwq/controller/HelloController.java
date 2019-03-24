@@ -19,6 +19,7 @@ public class HelloController {
     public String hello(@RequestParam("idd") String id){
         //productMapper
         List<Product> list = productMapper.selectAll();
+        System.out.println("111111111111111111111");
         return "hello zhouwq"+id+ Arrays.toString(list.toArray());
     }
 

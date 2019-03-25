@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class HelloController {
@@ -16,12 +18,12 @@ public class HelloController {
     private ProductMapper productMapper;
 
     @RequestMapping("/hello")
-    public String hello(@RequestParam("idd") String id){
+    public String hello(@RequestParam("idd") String id) {
         //productMapper
         List<Product> list = productMapper.selectAll();
         System.out.println("111111111111111111111");
-        System.out.println("222222222222222222222");
-        return "hello zhouwq"+id+ Arrays.toString(list.toArray());
+        System.out.println("333333333333333333333");
+        return "hello zhouwq" + id + Arrays.toString(list.toArray());
     }
 
 }

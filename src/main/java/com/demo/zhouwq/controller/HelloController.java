@@ -23,6 +23,8 @@ public class HelloController {
         //productMapper
         List<Product> list = productService.selectAll();
         System.out.println("111111111111111111111");
+        System.out.println("222222222222222222222");
+        System.out.println("4444444444444444444444");
         System.out.println("333333333333333333333");
         //TODO
         return "hello zhouwq" + id + Arrays.toString(list.toArray());

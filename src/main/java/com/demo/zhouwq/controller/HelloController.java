@@ -2,6 +2,7 @@ package com.demo.zhouwq.controller;
 
 import com.demo.zhouwq.dao.ProductMapper;
 import com.demo.zhouwq.entity.Product;
+import com.demo.zhouwq.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,15 +16,20 @@ import java.util.Map;
 @RestController
 public class HelloController {
     @Autowired
-    private ProductMapper productMapper;
+    private ProductService productService;
 
     @RequestMapping("/hello")
     public String hello(@RequestParam("idd") String id) {
         //productMapper
-        List<Product> list = productMapper.selectAll();
+        List<Product> list = productService.selectAll();
         System.out.println("111111111111111111111");
         System.out.println("333333333333333333333");
+        //TODO
         return "hello zhouwq" + id + Arrays.toString(list.toArray());
+    }
+
+    public void test(){
+    //TODO
     }
 
 }

@@ -1,6 +1,8 @@
 package com.demo.zhouwq.controller;
 
 import com.demo.zhouwq.entity.User;
+import com.demo.zhouwq.eums.StatusCode;
+import com.demo.zhouwq.response.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -17,15 +19,16 @@ public class MongoDBController {
     private MongoTemplate mongoTemplate;
 
     @RequestMapping("/mongo")
-    public String find(){
+    public BaseResponse find(){
         System.out.println(mongoTemplate);
        //Query query=new Query(Criteria.where("name").is("zhouwq"));
         List<User> userList =  mongoTemplate.findAll(User.class);
        // List<User> list = mongoTemplate.findAll(User.class);
        // System.out.println(list.toString());
        // return list.toString();
+        BaseResponse<List<User>> br = new BaseResponse(StatusCode.Success, userList);
         System.out.println(userList);
-        return userList.toString();
+        return br;
     }
 
 }

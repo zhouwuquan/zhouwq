@@ -7,6 +7,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * springboot整合redis
+ */
 @RestController
 public class RedisController {
 
